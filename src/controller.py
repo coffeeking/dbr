@@ -175,7 +175,7 @@ class Controller:
       if self.p.getState() == "Paused" and play:
         self.p.playPause()
     else:
-      self.showMessage(_("Warning"), _("There are currently nno playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def displayBookTranslationCallback(self, w, data):
@@ -192,7 +192,7 @@ class Controller:
       if self.p.getState() == "Paused" and play:
         self.p.playPause()
     else:
-      self.showMessage(_("Warning"), _("There are currently no playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def displayCurrentPlayingTimeCallback(self, w, data):
