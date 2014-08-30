@@ -92,7 +92,7 @@ class Book:
 
   def getNccPosition(self):
     """
-    Returhns the current toc position
+    Returns the current toc position
     """
     return self.ncc_pos
 

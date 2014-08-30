@@ -311,11 +311,11 @@ class Controller:
         else:
           self.showMessage(_("Warning"), _("You have not selected any chapter"))
       else:
-        self.showMessage(_("Error"), _("Don't exist any chapter in the book"))
+        self.showMessage(_("Error"), _("I can't  Find any chapters in this book. Maybe bad markup?"))
       if self.p.getState() == "Paused" and play:
         self.p.playPause()
     else:
-      self.showMessage(_("Warning"), _("There are currently no playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def goToNextChapterCallback(self, w, data):
@@ -329,7 +329,7 @@ class Controller:
         self.b.setReadPosition(self.b.ncc_pos,0)
         self.syncViewAudio()
     else:
-      self.showMessage(_("Warning"), _("There are currently no playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def goToPriorChapterCallback(self, w, data):
@@ -343,7 +343,7 @@ class Controller:
         self.b.setReadPosition(self.b.ncc_pos,0)
         self.syncViewAudio()
     else:
-      self.showMessage(_("Warning"), _("There are currently no playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def goToNextPageCallback(self, w, data):
@@ -397,7 +397,7 @@ class Controller:
       if self.p.getState() == "Playing":
         play = True
         self.p.playPause()
-      page = self.showEntryText(_("Go to page"), _("Enter the page which you want to go"), 4)
+      page = self.showEntryText(_("Go to page"), _("Enter the page that  you want to go to"), 4)
       if page.isdigit():
         switch, pos = self.b.goToPage(page)
         if switch == 1:
@@ -411,7 +411,7 @@ class Controller:
       if self.p.getState() == "Paused" and play:
         self.p.playPause()
     else:
-      self.showMessage(_("Warning"), _("Tehre are currently no playing book"))
+      self.showMessage(_("Warning"), _("There are currently no playing books"))
 
 
   def upVolumeCallback(self, w, data):
