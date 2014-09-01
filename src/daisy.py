@@ -5,6 +5,13 @@
 #import the xml parser
 import xml.dom.minidom as md
 #define the class for daisy 2 talking books
- class daisy2(multiMediaType) :
-    #dummy code goes here, after I get some sleep
+ class daisy2 :
+def __init__ (self, title, multimediaType, author) 
+    #more code goes here
+
+    return title
+#more code
+    return multimediaType
+    #more code here
+return author
 
