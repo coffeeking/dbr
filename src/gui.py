@@ -67,8 +67,8 @@ class MainWindow(wx.Frame):
         self.Close()
 
 def main():
-    ds = wx.App()
+    dbr = wx.App()
     MainWindow(None)
-    ds.MainLoop()    
+    dbr.MainLoop()    
 if __name__ == '__main__':
     main()
