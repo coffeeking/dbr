@@ -30,6 +30,8 @@ class MainWindow(wx.Frame):
         editMenu.Append(wx.ID_PREFERENCES, '&Preferences')
         BookmarksMenu=wx.Menu()
         BookmarksMenu.Append(100,'&add a bookmark')
+        BookmarksMenu.AppendSeparator()
+        BookmarksMenu.Append(101, '&list bookmarks for this book')
         playbackMenu=wx.Menu()
         playbackMenu.Append(100,'&play')
         playbackMenu.AppendSeparator()
