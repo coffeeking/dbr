@@ -17,9 +17,8 @@ class MainWindow(wx.Frame):
     def InitUI(self):
 
         menubar = wx.MenuBar()
-
         fileMenu = wx.Menu()
-        fileMenu.Append(wx.ID_OPEN, '&Open')
+        fileMenu.Append(wx.ID_OPEN, '&Open a book')
         fileMenu.AppendSeparator()
 
         exitProgram = wx.MenuItem(fileMenu, wx.ID_EXIT, '&Quit\tCtrl+Q')
@@ -29,18 +28,29 @@ class MainWindow(wx.Frame):
 
         editMenu = wx.Menu()
         editMenu.Append(wx.ID_PREFERENCES, '&Preferences')
-
+        BookmarksMenu=wx.Menu()
+        BookmarksMenu.Append(100,'&add a bookmark')
+        playbackMenu=wx.Menu()
+        playbackMenu.Append(100,'&play')
+        playbackMenu.AppendSeparator()
+        playbackMenu.Append(101, '&stop playback')
+        playbackMenu.AppendSeparator()
+        playbackMenu.Append(102, '&rewind')
+        playbackMenu.AppendSeparator()
+        playbackMenu.Append(103, '&fast forward')
         menubar.Append(fileMenu, '&File')
         menubar.Append(editMenu, '&Edit')
+        menubar.Append(BookmarksMenu, '&bookmarks')
+        menubar.Append(playbackMenu, '&playback')
         self.SetMenuBar(menubar)
+        ListBox=wx.ListBox(self)
+        self.SetTitle('books list')
         txtBox = wx.TextCtrl(self)
         txtBox.SetEditable(False)
-
         self.SetSize((350, 250))
         self.SetTitle('Daisy Book Reader')
         self.Centre()
         self.Show(True)
-
     def OnQuit(self, e):
         self.Close()
 
