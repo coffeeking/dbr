@@ -26,8 +26,9 @@ def getAuthor(self):
         for i in range (len(author)):
         if author[i].hasAttribute('name'):
         if author[i].attributes['name'].value == 'docAuthor':
-break
-return bookAuthor
+        break       
+        bookAuthor = author[i].attributes['content].value
+        return bookAuthor
 def getMultimediaType(self):
         #gets the type of daisy book we're looking at here, not the format.
         multimediaType=""
@@ -35,5 +36,7 @@ def getMultimediaType(self):
         for i in range (len(type)):
         if type[i].hasAttribute('name')
         if type[i].attributes['name'].value == 'dtb:multimediaType':
+        break
+        multimediaType = type[i].attributes['content'].value
         return multimediaType
 
