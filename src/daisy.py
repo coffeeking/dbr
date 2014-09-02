@@ -7,16 +7,16 @@ import xml.dom.minidom as md
 #define the class for daisy 3 talking books
 class daisy3 :
     def __init__ (self, title, author, multimediaType):
-    def getBookTitle(self):
+def getBookTitle(self):
     """
     Returns the book's title
     """
     book_title = ''
     title = self.tree.getElementsByTagName('title')
     for i in range(len(title)):
-    if title[i].hasAttribute('name'):
-    if title[i].attributes['name'].value == 'docTitle':
-    book_title = title[i].attributes['content'].value
+    if title[i].hasAttribute('text'):
+    if title[i].attributes['text'].value == 'docTitle':
+    book_title = title[i].attributes['text'].value
     break
     return book_title
 def getAuthor(self):
@@ -24,15 +24,15 @@ def getAuthor(self):
         bookAuthor=""
         author=self.tree.getElementsByTagName(author)
         for i in range (len(author)):
-        if author[i].hasAttribute('name'):
-        if author[i].attributes['name'].value == 'docAuthor':
+        if author[i].hasAttribute('text'):
+        if author[i].attributes['text'].value == 'docAuthor':
         break       
-        bookAuthor = author[i].attributes['content].value
+        bookAuthor = author[i].attributes['text'].value
         return bookAuthor
 def getMultimediaType(self):
         #gets the type of daisy book we're looking at here, not the format.
         multimediaType=""
-        type=self.tree.getElementsByTagname(type)
+        type=self.tree.getElementsByTagname(meta)
         for i in range (len(type)):
         if type[i].hasAttribute('name')
         if type[i].attributes['name'].value == 'dtb:multimediaType':
