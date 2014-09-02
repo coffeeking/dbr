@@ -6,18 +6,18 @@
 import xml.dom.minidom as md
 #define the class for daisy 3 talking books
  class daisy3 :
-def __init__ (self, title, multimediaType, author) 
+def __init__ (self, title, author, multimediaType) 
     
 def getBookTitle(self):
     """
     Returns the book's title
     """
     book_title = ''
-    meta = self.tree.getElementsByTagName('meta')
-    for i in range(len(meta)):
-      if meta[i].hasAttribute('name'):
-        if meta[i].attributes['name'].value == 'dc:title':
-          book_title = meta[i].attributes['content'].value
+    title = self.tree.getElementsByTagName('title')
+    for i in range(len(title)):
+      if title[i].hasAttribute('name'):
+        if title[i].attributes['name'].value == 'dc:title':
+          book_title = title[i].attributes['content'].value
         break
     return book_title
 def getAuthor(self):

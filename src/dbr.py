@@ -17,10 +17,8 @@
 
 import sys
 sys.argv[0]="dbr"
-import pygtk
-pygtk.require('2.0')
-import gtk
-import view, controller, player, settings
+import wx
+import gui, daisy
 
 from dbr_i18n import _          #for i18n support
 
@@ -28,16 +26,7 @@ def main():
   """
   Main method for the application
   """
-  p = player.Player()
-  sets = settings.Settings()
-  c = controller.Controller(p, sets)
-  v = view.View(c)
-  p.setController(c)
-
-  gtk.main()
-  return 0
-
-main()
+  main()
 
 
 if __name__ == "__main__":
