@@ -1,0 +1,4 @@
+daisy3 playback: Look in ncx file for nav info, using the tags level1, level2, etc to determine what navs are available
+daisy3 playback: look in opf file for the multimedia type before we open and display the book
+daisy3 playback: look in xml file for page numbers.
+
