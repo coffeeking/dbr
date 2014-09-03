@@ -20,7 +20,6 @@ sys.argv[0]="dbr"
 import wx
 import gui, daisy
 
-from dbr_i18n import _          #for i18n support
 
 def main():
   """
