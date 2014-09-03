@@ -15,12 +15,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import sys
+import sys, wx, gui, daisy, config
 sys.argv[0]="dbr"
-import wx
-import gui, daisy
-
-
 def main():
   """
   Main method for the application
