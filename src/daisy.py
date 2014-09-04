@@ -10,7 +10,7 @@ x = md.parse(file)
 #define the class for daisy 3 talking books
 class daisy3 :
     def getBookTitle(self, file):
-    #Returns the book's title
+        #Returns the book's title
         book_title = ''
         title = self.tree.getElementsByTagName('title')
         for i in range(len(title)):
@@ -18,9 +18,9 @@ class daisy3 :
                 if title[i].attributes['text'].value == 'docTitle':
                     book_title = title[i].attributes['text'].value
                     print(book_title)
-break
-            return book_title
-            print (' the title of the book is book_title')
+            break
+        return book_title
+         dd   print (' the title of the book is book_title')
     def getAuthor(self):
         #returns the author of the book
         bookAuthor=""
