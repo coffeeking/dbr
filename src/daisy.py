@@ -38,3 +38,6 @@ def getMultimediaType(self):
                 break
         multimediaType = type[i].attributes['content'].value
         return multimediaType
+        file = open("/home/kendell/daisy-books/11-22-63/11_22_63.ncx", "r")
+        x = md.parse(file)
+        

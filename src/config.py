@@ -10,7 +10,7 @@ import xdg, os
 class config:
     def get_settings_directory(self):
         #check for the presence
-        #of xdg-user-home, and if so, respect it. If not, default to ~/.config
+        #of xdg-user-home, and if so, respect it. If not, default to #~/.config
         #try getting the xdg-user-home variable. If it isn't set, default #to ~/.config
         if os.environ.get('XDG_CONFIG_HOME') == "":
             settingsDir = os.path.join(xdg_home, 'dbr')
