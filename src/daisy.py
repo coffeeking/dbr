@@ -5,9 +5,11 @@
 #import the xml parser
 import xml.dom.minidom as md
 import os, sys
+file = open("/home/kendell/daisy-books/11-22-63/11_22_63.ncx", "r")
+x = md.parse(file)
 #define the class for daisy 3 talking books
 class daisy3 :
-    def getBookTitle(self):
+    def getBookTitle(self, file):
     #Returns the book's title
         book_title = ''
         title = self.tree.getElementsByTagName('title')
@@ -15,7 +17,8 @@ class daisy3 :
             if title[i].hasAttribute('text'):
                 if title[i].attributes['text'].value == 'docTitle':
                     book_title = title[i].attributes['text'].value
-                break
+                    print(book_title)
+break
             return book_title
             print (' the title of the book is book_title')
     def getAuthor(self):
@@ -38,6 +41,4 @@ def getMultimediaType(self):
                 break
         multimediaType = type[i].attributes['content'].value
         return multimediaType
-        file = open("/home/kendell/daisy-books/11-22-63/11_22_63.ncx", "r")
-        x = md.parse(file)
         
