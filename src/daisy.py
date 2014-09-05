@@ -3,32 +3,33 @@
 #This file is part of dbr
 #This program is free software you may modify it and distribute it under the terms of the Gnu General Public License, Either version 3 of the license or, at your option, any later version
 #import the xml parser
-import xml.dom.minidom as md
+import xml.dom.minidom
 import os, sys
 file = open("/home/kendell/daisy-books/11-22-63/11_22_63.ncx", "r")
 x = md.parse(file)
+#create the book info dictionary
+bookinfo = {"title" "author" "type"}
 #define the class for daisy 3 talking books
 class daisy3 :
-    def getBookTitle(self, x):
+    def getBookTitle(self, file, x):
         #Returns the book's title
         book_title = ''
-        title = self.tree.getElementsByTagName('title')
+        title = self.tree.getElementsByTagName(x, 'docTytle')
         for i in range(len(title)):
             if title[i].hasAttribute('text'):
-                if title[i].attributes['text'].value == 'docTitle':
+                    print "we've got the book's title"
                     book_title = title[i].attributes['text'].value
-                    print("the title is" + book_title)
             break
         return book_title
-    def getAuthor(self):
+    def getAuthor(self, file, x):
         #returns the author of the book
         bookAuthor=""
         author=self.tree.getElementsByTagName(author)
         for i in range (len(author)):
-            if author[i].hasAttribute('text'):  
-                if author[i].attributes['text'].value == 'docAuthor':
-                    break       
-        bookAuthor = author[i].attributes['text'].value
+            if author[i].hasAttribute('docAuthor'):  
+                bookAuthor = author[i].attributes['text'].value
+                print("the author is" + bookAuthor)
+                break       
         return bookAuthor
 def getMultimediaType(self):
     #gets the type of daisy book we're looking at here, not the format.
@@ -37,7 +38,6 @@ def getMultimediaType(self):
     for i in range (len(type)):
         if type[i].hasAttribute('name'):    
             if type[i].attributes['name'].value == 'dtb:multimediaType':
-                break
-        multimediaType = type[i].attributes['content'].value
-        return multimediaType
-        
+                multimediaType = type[i].attributes['content'].value
+break                   
+return multimediaType
